@@ -1,0 +1,12 @@
+<!--index.wxml-->
+<view class="container">
+  <form bindsubmit="formSubmit">
+  <view><input name="question" placeholder="请输入您的问题"></input></view>
+  <block wx:for="{{lists}}" wx:key="{{index}}">  
+  <input class='create-li' name="{{index}}" data-id="{{index}}" placeholder="选项" value="{{item.value}}" bindinput='bindKeyInput'></input>  
+</block>   
+<button class='add-li' bindtap='addList'>添加选项</button>  
+<button class='add-li' bindtap='delList'>删除选项</button>  
+<button type="primary" formType="submit">答案</button>
+</form>
+</view>
