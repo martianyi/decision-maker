@@ -1,0 +1,8 @@
+<view class="page">
+  <view class="page__hd page__bd_spacing">
+    <!-- <view class="avatar">
+      <image class="avatar__pic" src="{{logo}}"></image>
+    </view> -->
+    <view class='result'>{{result}}</view>
+  </view>
+</view>

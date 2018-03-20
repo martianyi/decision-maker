@@ -1,28 +1,24 @@
-//index.js
-//获取应用实例
-const app = getApp()
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min 
 }
 
 Page({
   data: {
+    logo: '../../images/logo.jpg',
     lists: [{}, {}],
-  },
-  onLoad: function () {
-    console.log('page load')
+    canDelList: false
   },
   addList: function () {
     var lists = this.data.lists
     var newData = {}
-    lists.push(newData)//实质是添加lists数组内容，使for循环多一次  
+    lists.push(newData)  
     this.setData({
       lists: lists,
     })
   },
   delList: function () {
     var lists = this.data.lists
-    lists.pop() //实质是删除lists数组内容，使for循环少一次  
+    lists.pop()  
     this.setData({
       lists: lists,
     })
@@ -34,23 +30,29 @@ Page({
       lists: lists
     })
   },
-  //事件处理函数
   formSubmit: function (e) {
-    var answers = e.detail.value
-    var quesition = answers['quesition']
-    delete answers['question']
-    console.log('question', quesition)
-    console.log('answers', answers)
-    var indices = Object.keys(answers)
+    var options = e.detail.value
+    var indices = Object.keys(options)
     var minIndex = Math.min(...indices)
     var maxIndex = Math.max(...indices)
     var theIndex = getRandomInt(minIndex, maxIndex)
-    var answer = answers[theIndex]
-    wx.showToast({
-      icon: 'none',
-      title: '答案是: ' + answer,
-      duration: 2000,
+    var result = options[theIndex]
+    if (result === ''){
+      wx.showToast({
+        title: '好像没有选项哦',
+        image: this.data.logo
+      })
+      return
+    }
+    wx.showLoading({
+      title: '决策姬正在思考',
       mask: true
     })
+    setTimeout(() => {
+      wx.hideLoading()
+      wx.navigateTo({
+        url: '../result/result?result=' + result
+      })
+    }, 1500)
   }
 })

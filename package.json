@@ -1,0 +1,23 @@
+{
+  "name": "decision-maker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/martianyi/decision-maker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/martianyi/decision-maker/issues"
+  },
+  "homepage": "https://gitlab.com/martianyi/decision-maker#README",
+  "dependencies": {
+    "weui-wxss": "^1.1.1"
+  }
+}

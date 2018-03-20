@@ -1,12 +1,27 @@
 <!--index.wxml-->
-<view class="container">
-  <form bindsubmit="formSubmit">
-  <view><input name="question" placeholder="请输入您的问题"></input></view>
-  <block wx:for="{{lists}}" wx:key="{{index}}">  
-  <input class='create-li' name="{{index}}" data-id="{{index}}" placeholder="选项" value="{{item.value}}" bindinput='bindKeyInput'></input>  
-</block>   
-<button class='add-li' bindtap='addList'>添加选项</button>  
-<button class='add-li' bindtap='delList'>删除选项</button>  
-<button type="primary" formType="submit">答案</button>
-</form>
+<view class="page">
+  <view class="page__hd page__bd_spacing">
+     <view class="avatar">
+      <image class="avatar__pic" src="{{logo}}"></image>
+    </view> 
+    <form bindsubmit="formSubmit">
+      <view class="weui-cells">
+        <block wx:for="{{lists}}" wx:key="{{index}}">
+          <view class="weui-cell weui-cell_input">
+            <view class="weui-cell__bd">
+              <input class="weui-input" name="{{index}}" data-id="{{index}}" placeholder="请输入选项" value="{{item.value}}" bindinput='bindKeyInput'></input>
+            </view>
+          </view>
+        </block>
+        <view class=" weui-cell weui-cell_link">
+          <view class="weui-cell__bd" bindtap='addList'>添加选项</view>
+        </view>
+        <view class="weui-cell weui-cell_link" wx:if="{{lists.length> 2}}">
+          <view class="weui-cell__bd" bindtap='delList'>删除选项</view>
+        </view>
+      </view>
+      <button class="weui-btn" type="primary" formType="submit">答案</button>
+      <button class="weui-btn" type="warn" formType="reset">重置选项</button>
+    </form>
+  </view>
 </view>
