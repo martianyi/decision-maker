@@ -5,13 +5,11 @@ function getRandomInt(min, max) {
 Page({
   data: {
     logo: '../../images/logo.jpg',
-    lists: [{}, {}],
-    canDelList: false
+    lists: [{}, {}]
   },
   addList: function () {
     var lists = this.data.lists
-    var newData = {}
-    lists.push(newData)  
+    lists.push({})  
     this.setData({
       lists: lists,
     })
@@ -54,5 +52,13 @@ Page({
         url: '../result/result?result=' + result
       })
     }, 1500)
+  },
+  formReset: function(e) {
+    var lists = this.data.lists
+    var newLists = []
+    for (let i = 0; i < lists.length; i++) {
+      newLists.push({})
+    }
+    this.setData({lists: newLists})
   }
 })

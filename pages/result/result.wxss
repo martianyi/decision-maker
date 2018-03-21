@@ -1,6 +1,7 @@
 .result {
   text-align: center;
+  margin: 30rpx;
   font-size: 30px;
   font-weight: 600;
-  margin: 50rpx;
+  word-wrap:break-word;
 }

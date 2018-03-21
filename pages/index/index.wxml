@@ -4,7 +4,7 @@
      <view class="avatar">
       <image class="avatar__pic" src="{{logo}}"></image>
     </view> 
-    <form bindsubmit="formSubmit">
+    <form bindsubmit="formSubmit" bindreset="formReset">
       <view class="weui-cells">
         <block wx:for="{{lists}}" wx:key="{{index}}">
           <view class="weui-cell weui-cell_input">
@@ -13,11 +13,11 @@
             </view>
           </view>
         </block>
-        <view class=" weui-cell weui-cell_link">
-          <view class="weui-cell__bd" bindtap='addList'>添加选项</view>
+        <view class=" weui-cell weui-cell_link" bindtap='addList'>
+          <view class="weui-cell__bd">添加选项</view>
         </view>
-        <view class="weui-cell weui-cell_link" wx:if="{{lists.length> 2}}">
-          <view class="weui-cell__bd" bindtap='delList'>删除选项</view>
+        <view class="weui-cell weui-cell_link" wx:if="{{lists.length> 2}}" bindtap='delList'>
+          <view class="weui-cell__bd">删除选项</view>
         </view>
       </view>
       <button class="weui-btn" type="primary" formType="submit">答案</button>
