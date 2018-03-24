@@ -60,5 +60,13 @@ Page({
       newLists.push({})
     }
     this.setData({lists: newLists})
+  },
+  onShareAppMessage: function () {
+    return {
+      title: '决策姬 - 选择困难症终结者',
+      desc: '',
+      path: '/pages/index/index',
+      imageUrl: '../../images/logo.jpg'
+    }
   }
 })

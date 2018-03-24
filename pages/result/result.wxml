@@ -4,5 +4,11 @@
       <image class="avatar__pic" src="{{logo}}"></image>
     </view> -->
     <view class='result'>{{result}}</view>
+    <view class="weui-footer weui-footer_fixed-bottom">
+        <view class="weui-footer__links" wx:if='{{showNavigatar}}'>
+            <navigator url="../index/index" open-type="redirect" class="weui-footer__link">返回主程序</navigator>
+        </view>
+        <view class="weui-footer__text">决策姬</view>
+    </view>
   </view>
 </view>
