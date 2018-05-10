@@ -4,7 +4,7 @@ function getRandomInt(min, max) {
 
 Page({
   data: {
-    logo: '../../images/logo.jpg',
+    logo: '../../images/logo.png',
     lists: [{}, {}]
   },
   addList: function () {
@@ -66,7 +66,7 @@ Page({
       title: '决策姬 - 选择困难症终结者',
       desc: '',
       path: '/pages/index/index',
-      imageUrl: '../../images/logo.jpg'
+      imageUrl: '../../images/logo.png'
     }
   }
 })

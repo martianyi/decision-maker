@@ -5,8 +5,11 @@
     </view> -->
     <view class='result'>{{result}}</view>
     <view class="weui-footer weui-footer_fixed-bottom">
-        <view class="weui-footer__links" wx:if='{{showNavigatar}}'>
+        <view class="weui-footer__links" wx:if='{{fromShare === true}}'>
             <navigator url="../index/index" open-type="redirect" class="weui-footer__link">返回主程序</navigator>
+        </view>
+        <view class="weui-footer__links" wx:if='{{fromShare === false}}'>
+            <navigator url="../index/index" open-type="redirect" class="weui-footer__link">后悔了，再测一次</navigator>
         </view>
         <view class="weui-footer__text">决策姬</view>
     </view>

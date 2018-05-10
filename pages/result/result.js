@@ -2,14 +2,14 @@ Page({
   data: {
     logo: '../../images/logo.jpg',
     result: '',
-    showNavigatar: false
+    fromShare: false
   },
   onLoad: function (option) {
     console.log(option)
     var result = option.result
     this.setData({ result: result })
     if (/true/.test(option.sharing)) {
-      this.setData({ showNavigatar: true})
+      this.setData({ fromShare: true})
     }
   },
   onShareAppMessage: function () {
