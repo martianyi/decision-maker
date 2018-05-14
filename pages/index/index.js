@@ -72,18 +72,10 @@ Page({
       curView: 1,
       result: result,
     })
-    // wx.showLoading({
-    //   title: '决策姬正在思考',
-    //   mask: true
-    // })
     setTimeout(() => {
       this.setData({
         curView: 2,
       })
-      // wx.hideLoading()
-      // wx.navigateTo({
-      //   url: '../result/result?result=' + result
-      // })
     }, 2000)
   },
   formReset: function(e) {
@@ -107,7 +99,7 @@ Page({
       title: '决策姬 - 选择困难症终结者',
       desc: '',
       path: '/pages/index/index',
-      imageUrl: '../../images/logo.png'
+      imageUrl: '../../images/share.png'
     }
   }
 })
